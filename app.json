@@ -8,7 +8,8 @@
     "pages/home/view/index",
     "pages/album/index/index",
     "pages/album/show1/index",
-    "pages/album/show2/index"
+    "pages/album/show2/index",
+    "pages/mine/logs/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",
