@@ -1,0 +1,26 @@
+<home wx:if="{{PageCur=='home'}}"></home>
+<share wx:if="{{PageCur=='share'}}"></share>
+<mine wx:if="{{PageCur=='mine'}}"></mine>
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action" bindtap="NavChange" data-cur="home">
+    <!-- <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/home{{PageCur=='home'?'_cur':''}}.png"></image>
+    </view> -->
+    <view class="cuIcon-home{{PageCur=='home'?'fill text-green':''}}"></view>
+    <view class="{{PageCur=='home'?'text-green':'text-gray'}}">首页</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="share">
+    <!-- <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/share{{PageCur=='share'?'_cur':''}}.png"></image>
+    </view> -->
+    <view class="cuIcon-cameraadd{{PageCur=='share'?'fill text-green':''}}"></view>
+    <view class="{{PageCur=='share'?'text-green':'text-gray'}}">发现</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="mine">
+    <!-- <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/mine{{PageCur=='mine'?'_cur':''}}.png"></image>
+    </view> -->
+    <view class="cuIcon-my{{PageCur=='mine'?'fill text-green':''}}"></view>
+    <view class="{{PageCur=='mine'?'text-green':'text-gray'}}">我的</view>
+  </view>
+</view>

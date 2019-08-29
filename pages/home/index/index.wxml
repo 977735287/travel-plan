@@ -1,0 +1,289 @@
+<scroll-view scroll-y class="scrollPage">
+  <!-- <cu-custom bgImage="/images/bg1.jpg" isBack="{{false}}"> -->
+  <cu-custom bgImage="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3098043245,3200747665&fm=26&gp=0.jpg" isBack="{{false}}">
+    <view class='title-content' slot="content">
+      <text decode="{{true}}">首&nbsp;&nbsp;&nbsp;&nbsp;页</text>
+    </view>
+  </cu-custom>
+  <view class='container'>
+    <view class="cu-bar bg-white solid-bottom margin-top">
+      <view class="action">
+        <text class="cuIcon-title text-green"></text> 进行中
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item cur">
+        <view class="cu-avatar radius lg" style="background-image:url(https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg);">
+          <!-- <view class="cu-tag badge"></view> -->
+        </view>
+        <view class="content" bindtap='bindView'>
+          <view>
+            <text class="text-cut">巴拉巴拉小魔仙-黑暗魔法能量-出击</text>
+            <view class="cu-tag round bg-green">2天</view>
+          </view>
+          <view class="text-gray text-sm flex">
+            <text class="text-cut">
+            <text class="cuIcon-locationfill text-orange margin-right-xs"></text>
+            <text class="margin-right-xs">上海</text>
+            <text class="cuIcon-time margin-right-xs margin-left-xs"></text>
+            <text class="margin-right-xs">2019-08-29</text>
+            </text>
+          </view>
+        </view>
+        <view class="action">
+          <view class="cuIcon-write" data-id='1' bindtap='bindEdit'></view>
+        </view>
+      </view>
+    </view>
+
+    <view class="cu-bar bg-white solid-bottom margin-top">
+      <view class="action">
+        <text class="cuIcon-title text-brown"></text> 草稿
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item cur">
+        <view class="cu-avatar radius lg" style="background-image:url(https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg);">
+          <view class="cu-tag badge"></view>
+        </view>
+        <view class="content">
+          <view>
+            <text class="text-cut">我不要你觉得我只要我觉得</text>
+            <view class="cu-tag round bg-brown light">2天</view>
+          </view>
+          <view class="text-gray text-sm flex">
+            <text class="text-cut">
+            <text class="cuIcon-locationfill text-orange margin-right-xs"></text>
+            <text class="margin-right-xs">上海</text>
+            <text class="cuIcon-time margin-right-xs margin-left-xs"></text>
+            <text class="margin-right-xs">2019-08-29</text>
+            </text>
+          </view>
+        </view>
+        <view class="action">
+          <view class="cuIcon-write" bindtap='bindEdit'></view>
+        </view>
+      </view>
+      <view class="cu-item cur">
+        <view class="cu-avatar radius lg" style="background-image:url(https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg);">
+          <view class="cu-tag badge"></view>
+        </view>
+        <view class="content">
+          <view>
+            <text class="text-cut">我有两套房子登记了你的名字，我的左心房和右心房</text>
+            <view class="cu-tag round bg-brown light">2天</view>
+          </view>
+          <view class="text-gray text-sm flex">
+            <text class="text-cut">
+            <text class="cuIcon-locationfill text-orange margin-right-xs"></text>
+            <text class="margin-right-xs">上海</text>
+            <text class="cuIcon-time margin-right-xs margin-left-xs"></text>
+            <text class="margin-right-xs">2019-08-29</text>
+            </text>
+          </view>
+        </view>
+        <view class="action">
+          <view class="cuIcon-write" bindtap='bindEdit'></view>
+        </view>
+      </view>
+    </view>
+
+    <view class="cu-bar bg-white solid-bottom margin-top">
+      <view class="action">
+        <text class="cuIcon-title text-grey "></text> 历史
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item cur">
+        <view class="cu-avatar radius lg" style="background-image:url(https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg);">
+        </view>
+        <view class="content">
+          <view>
+            <text class="text-cut">银行卡掉了怎么办？不可以捡起来么？</text>
+            <view class="cu-tag round bg-grey light">6天</view>
+          </view>
+          <view class="text-gray text-sm flex">
+            <text class="text-cut">
+            <text class="cuIcon-locationfill text-orange margin-right-xs"></text>
+            <text class="margin-right-xs">上海</text>
+            <text class="cuIcon-time margin-right-xs margin-left-xs"></text>
+            <text class="margin-right-xs">2019-08-29</text>
+            </text>
+          </view>
+        </view>
+        <view class="action">
+          <view class="cuIcon-write" bindtap='bindEdit'></view>
+        </view>
+      </view>
+      <view class="cu-item cur">
+        <view class="cu-avatar radius lg" style="background-image:url(https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg);">
+        </view>
+        <view class="content">
+          <view>
+            <text class="text-cut">深圳</text>
+            <view class="cu-tag round bg-grey light">6天</view>
+          </view>
+          <view class="text-gray text-sm flex">
+            <text class="text-cut">
+            <text class="cuIcon-locationfill text-orange margin-right-xs"></text>
+            <text class="margin-right-xs">上海</text>
+            <text class="cuIcon-time margin-right-xs margin-left-xs"></text>
+            <text class="margin-right-xs">2019-08-29</text>
+            </text>
+          </view>
+        </view>
+        <view class="action">
+          <view class="cuIcon-write" bindtap='bindEdit'></view>
+        </view>
+      </view>
+      <view class="cu-item cur">
+        <view class="cu-avatar radius lg" style="background-image:url(https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg);">
+        </view>
+        <view class="content">
+          <view>
+            <text class="text-cut">妈我爱你倒过来读你爱我吗不爱</text>
+            <view class="cu-tag round bg-grey light">6天</view>
+          </view>
+          <view class="text-gray text-sm flex">
+            <text class="text-cut">
+            <text class="cuIcon-locationfill text-orange margin-right-xs"></text>
+            <text class="margin-right-xs">上海</text>
+            <text class="cuIcon-time margin-right-xs margin-left-xs"></text>
+            <text class="margin-right-xs">2019-08-29</text>
+            </text>
+          </view>
+        </view>
+        <view class="action">
+          <view class="cuIcon-write" bindtap='bindEdit'></view>
+        </view>
+      </view>
+      <view class="cu-item cur">
+        <view class="cu-avatar radius lg" style="background-image:url(https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg);">
+        </view>
+        <view class="content">
+          <view>
+            <text class="text-cut">银行卡掉了怎么办？不可以捡起来么？</text>
+            <view class="cu-tag round bg-grey light">6天</view>
+          </view>
+          <view class="text-gray text-sm flex">
+            <text class="text-cut">
+            <text class="cuIcon-locationfill text-orange margin-right-xs"></text>
+            <text class="margin-right-xs">上海</text>
+            <text class="cuIcon-time margin-right-xs margin-left-xs"></text>
+            <text class="margin-right-xs">2019-08-29</text>
+            </text>
+          </view>
+        </view>
+        <view class="action">
+          <view class="cuIcon-write" bindtap='bindEdit'></view>
+        </view>
+      </view>
+      <view class="cu-item cur">
+        <view class="cu-avatar radius lg" style="background-image:url(https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg);">
+        </view>
+        <view class="content">
+          <view>
+            <text class="text-cut">深圳</text>
+            <view class="cu-tag round bg-grey light">6天</view>
+          </view>
+          <view class="text-gray text-sm flex">
+            <text class="text-cut">
+            <text class="cuIcon-locationfill text-orange margin-right-xs"></text>
+            <text class="margin-right-xs">上海</text>
+            <text class="cuIcon-time margin-right-xs margin-left-xs"></text>
+            <text class="margin-right-xs">2019-08-29</text>
+            </text>
+          </view>
+        </view>
+        <view class="action">
+          <view class="cuIcon-write" bindtap='bindEdit'></view>
+        </view>
+      </view>
+      <view class="cu-item cur">
+        <view class="cu-avatar radius lg" style="background-image:url(https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg);">
+        </view>
+        <view class="content">
+          <view>
+            <text class="text-cut">妈我爱你倒过来读你爱我吗不爱</text>
+            <view class="cu-tag round bg-grey light">6天</view>
+          </view>
+          <view class="text-gray text-sm flex">
+            <text class="text-cut">
+            <text class="cuIcon-locationfill text-orange margin-right-xs"></text>
+            <text class="margin-right-xs">上海</text>
+            <text class="cuIcon-time margin-right-xs margin-left-xs"></text>
+            <text class="margin-right-xs">2019-08-29</text>
+            </text>
+          </view>
+        </view>
+        <view class="action">
+          <view class="cuIcon-write" bindtap='bindEdit'></view>
+        </view>
+      </view>
+      <view class="cu-item cur">
+        <view class="cu-avatar radius lg" style="background-image:url(https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg);">
+        </view>
+        <view class="content">
+          <view>
+            <text class="text-cut">银行卡掉了怎么办？不可以捡起来么？</text>
+            <view class="cu-tag round bg-grey light">6天</view>
+          </view>
+          <view class="text-gray text-sm flex">
+            <text class="text-cut">
+            <text class="cuIcon-locationfill text-orange margin-right-xs"></text>
+            <text class="margin-right-xs">上海</text>
+            <text class="cuIcon-time margin-right-xs margin-left-xs"></text>
+            <text class="margin-right-xs">2019-08-29</text>
+            </text>
+          </view>
+        </view>
+        <view class="action">
+          <view class="cuIcon-write" bindtap='bindEdit'></view>
+        </view>
+      </view>
+      <view class="cu-item cur">
+        <view class="cu-avatar radius lg" style="background-image:url(https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg);">
+        </view>
+        <view class="content">
+          <view>
+            <text class="text-cut">深圳</text>
+            <view class="cu-tag round bg-grey light">6天</view>
+          </view>
+          <view class="text-gray text-sm flex">
+            <text class="text-cut">
+            <text class="cuIcon-locationfill text-orange margin-right-xs"></text>
+            <text class="margin-right-xs">上海</text>
+            <text class="cuIcon-time margin-right-xs margin-left-xs"></text>
+            <text class="margin-right-xs">2019-08-29</text>
+            </text>
+          </view>
+        </view>
+        <view class="action">
+          <view class="cuIcon-write" bindtap='bindEdit'></view>
+        </view>
+      </view>
+      <view class="cu-item cur">
+        <view class="cu-avatar radius lg" style="background-image:url(https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg);">
+        </view>
+        <view class="content">
+          <view>
+            <text class="text-cut">妈我爱你倒过来读你爱我吗不爱</text>
+            <view class="cu-tag round bg-grey light">6天</view>
+          </view>
+          <view class="text-gray text-sm flex">
+            <text class="text-cut">
+            <text class="cuIcon-locationfill text-orange margin-right-xs"></text>
+            <text class="margin-right-xs">上海</text>
+            <text class="cuIcon-time margin-right-xs margin-left-xs"></text>
+            <text class="margin-right-xs">2019-08-29</text>
+            </text>
+          </view>
+        </view>
+        <view class="action">
+          <view class="cuIcon-write" bindtap='bindEdit'></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='cu-tabbar-height'></view>
+</scroll-view>

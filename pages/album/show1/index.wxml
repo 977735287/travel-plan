@@ -1,0 +1,50 @@
+<scroll-view scroll-y class="scrollPage">
+  <cu-custom bgImage="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3098043245,3200747665&fm=26&gp=0.jpg" isBack="{{true}}">
+    <view class='title-content' slot="content">
+      <text decode="{{true}}">旋&nbsp;&nbsp;转&nbsp;&nbsp;相&nbsp;&nbsp;册&nbsp;&nbsp;1</text>
+    </view>
+  </cu-custom>
+  <view class='container'>
+    <view class="body">
+      <view class="react">
+        <view class="out_front">
+          <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3136075639,3338708347&fm=26&gp=0.jpg" class="out_pic"></image>
+        </view>
+        <view class="out_back">
+          <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3136075639,3338708347&fm=26&gp=0.jpg" class="out_pic"></image>
+        </view>
+        <view class="out_left">
+          <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3136075639,3338708347&fm=26&gp=0.jpg" class="out_pic"></image>
+        </view>
+        <view class="out_right">
+          <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3136075639,3338708347&fm=26&gp=0.jpg" class="out_pic"></image>
+        </view>
+        <view class="out_top">
+          <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3136075639,3338708347&fm=26&gp=0.jpg" class="out_pic"></image>
+        </view>
+        <view class="out_bottom">
+          <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3136075639,3338708347&fm=26&gp=0.jpg" class="out_pic"></image>
+        </view>
+        <span class="in_front">
+          <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3136075639,3338708347&fm=26&gp=0.jpg" class="in_pic"></image>
+        </span>
+        <span class="in_back">
+          <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3136075639,3338708347&fm=26&gp=0.jpg" class="in_pic"></image>
+        </span>
+        <span class="in_left">
+          <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3136075639,3338708347&fm=26&gp=0.jpg" class="in_pic"></image>
+        </span>
+        <span class="in_right">
+          <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3136075639,3338708347&fm=26&gp=0.jpg" class="in_pic"></image>
+        </span>
+        <span class="in_top">
+          <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3136075639,3338708347&fm=26&gp=0.jpg" class="in_pic"></image>
+        </span>
+        <span class="in_bottom">
+          <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3136075639,3338708347&fm=26&gp=0.jpg" class="in_pic"></image>
+        </span>
+      </view>
+    </view>
+  </view>
+  <view class='cu-tabbar-height'></view>
+</scroll-view>

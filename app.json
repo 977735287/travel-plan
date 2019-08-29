@@ -1,0 +1,23 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/index/index",
+    "pages/mine/index/index",
+    "pages/share/index/index",
+    "pages/home/edit/index",
+    "pages/home/view/index",
+    "pages/album/index/index",
+    "pages/album/show1/index",
+    "pages/album/show2/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#39b54a",
+    "navigationBarTitleText": "travel plan A",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

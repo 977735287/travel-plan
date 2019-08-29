@@ -1,0 +1,94 @@
+
+.box {
+  /*设置3D效果*/
+  transform-style: preserve-3d;
+  /*盒子的大小*/
+  width: 200px;
+  height: 200px;
+  background: red;
+  /*设置盒子的位置，便于观察*/
+  margin: 200px auto;
+  /*复合方式设置动画 三者分别为：动画名 执行一次时间 执行方式*/
+  animation: zhuan 10s ease;
+  /*令动画无限执行下去*/
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.box view {
+  width: 200px;
+  height: 200px;
+  opacity: 1;
+  /*设置过渡*/
+  transition: all 1s ease 0s;
+  position: absolute;
+}
+
+.out_pic {
+    width:200px;
+    height:200px;
+}
+
+/*调整位置，制作成一个六边形*/
+
+.box .view1 {
+  transform: translateZ(100px);
+}
+
+.box .view2 {
+  transform: translateZ(-100px);
+}
+
+.box .view3 {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.box .view4 {
+  transform: rotateX(270deg) translateZ(100px);
+}
+
+.box .view5 {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.box .view6 {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+/*添加3D旋转效果 让其绕X、Y轴同时旋转90度*/
+
+@keyframes zhuan {
+  from {
+    transform: rotateX(0deg) rotateZ(0deg) rotateY(0deg);
+  }
+
+  to {
+    transform: rotateX(360deg) rotateZ(360deg) rotateY(360deg);
+  }
+}
+
+/*给正方体添加一个hover效果*/
+
+.box:hover .view1 {
+  transform: translateZ(200px);
+}
+
+.box:hover .view2 {
+  transform: translateZ(-200px);
+}
+
+.box:hover .view3 {
+  transform: rotateX(90deg) translateZ(200px);
+}
+
+.box:hover .view4 {
+  transform: rotateX(270deg) translateZ(200px);
+}
+
+.box:hover .view5 {
+  transform: rotateY(-90deg) translateZ(200px);
+}
+
+.box:hover .view6 {
+  transform: rotateY(90deg) translateZ(200px);
+}

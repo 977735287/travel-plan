@@ -1,0 +1,11 @@
+<scroll-view scroll-y class="scrollPage">
+  <!-- <cu-custom bgImage="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3098043245,3200747665&fm=26&gp=0.jpg" isBack="{{false}}">
+    <view class='title-content' slot="content">
+      <text decode="{{true}}">编&nbsp;&nbsp;&nbsp;&nbsp;辑</text>
+    </view>
+  </cu-custom> -->
+  <view class='container'>
+    
+  </view>
+  <view class='cu-tabbar-height'></view>
+</scroll-view>
