@@ -1,12 +1,19 @@
-Page({
-  data: {},
+const app = getApp()
 
-  onLoad: function (options) { },
-  onReady: function () { },
-  onShow: function () { },
-  onHide: function () { },
-  onUnload: function () { },
-  onPullDownRefresh: function () { },
-  onReachBottom: function () { },
-  onShareAppMessage: function () { }
+Component({
+  options: {
+    addGlobalClass: true,
+  },
+  data: {
+    userInfo: {}
+  },
+  attached() {
+    this.setData({
+      userInfo: app.globalData.userInfo
+    })
+    console.info(app.globalData.userInfo)
+  },
+  methods: {
+
+  },
 })

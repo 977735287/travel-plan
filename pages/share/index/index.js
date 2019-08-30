@@ -1,12 +1,12 @@
-Page({
+Component({
+  options: {
+    addGlobalClass: true,
+  },
   data: {},
+  attached() {
 
-  onLoad: function (options) { },
-  onReady: function () { },
-  onShow: function () { },
-  onHide: function () { },
-  onUnload: function () { },
-  onPullDownRefresh: function () { },
-  onReachBottom: function () { },
-  onShareAppMessage: function () { }
+  },
+  methods: {
+
+  },
 })

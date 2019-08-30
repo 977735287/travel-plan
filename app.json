@@ -9,7 +9,8 @@
     "pages/album/index/index",
     "pages/album/show1/index",
     "pages/album/show2/index",
-    "pages/mine/logs/index"
+    "pages/mine/logs/index",
+    "pages/auth/wechat/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",

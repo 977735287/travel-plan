@@ -1,0 +1,4 @@
+
+<view class='padding-xl'>
+  <button class='cu-btn  bg-green shadow lg block' open-type="getUserInfo" bindgetuserinfo="getUserInfo">微信登录</button>
+</view>
