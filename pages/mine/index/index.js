@@ -11,9 +11,12 @@ Component({
     this.setData({
       userInfo: app.globalData.userInfo
     })
-    console.info(app.globalData.userInfo)
   },
   methods: {
-
+    bindImgPreview(e) {
+      wx.previewImage({
+        urls: [this.data.userInfo.avatarUrl],
+      })
+    }
   },
 })

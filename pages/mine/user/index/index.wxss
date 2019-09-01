@@ -1,0 +1,16 @@
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.field-value {
+  /* margin-right: 23px; */
+  margin-right: 0px;
+}
+
+.field-value-arrow {
+  margin-right: -10px;
+}

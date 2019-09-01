@@ -1,0 +1,45 @@
+<scroll-view scroll-y class="scrollPage">
+  <cu-custom bgImage="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3098043245,3200747665&fm=26&gp=0.jpg" isBack="{{true}}">
+    <view class='title-content' slot="content">
+      <text decode="{{true}}">系&nbsp;&nbsp;统&nbsp;&nbsp;信&nbsp;&nbsp;息</text>
+    </view>
+  </cu-custom>
+  <view class='container text-xl fields'>
+    <view class='field' wx:for='{{systemInfo}}' wx:for-index='key'>
+      <view wx:if="{{key==='safeArea'}}">
+        <view class='field-name'>{{key}}.bottom:</view>
+        <view class='field-value'>{{item.bottom}}</view>
+        <view class='field'>
+          <view class='field-name'>{{key}}.height:</view>
+          <view class='field-value'>{{item.height}}</view>
+        </view>
+        <view class='field'>
+          <view class='field-name'>{{key}}.left:</view>
+          <view class='field-value'>{{item.left}}</view>
+        </view>
+        <view class='field'>
+          <view class='field-name'>{{key}}.right:</view>
+          <view class='field-value'>{{item.right}}</view>
+        </view>
+        <view class='field'>
+          <view class='field-name'>{{key}}.top:</view>
+          <view class='field-value'>{{item.top}}</view>
+        </view>
+        <view class='field'>
+          <view class='field-name'>{{key}}.width:</view>
+          <view class='field-value'>{{item.width}}</view>
+        </view>
+      </view>
+      <view wx:else>
+        <view class='field-name'>{{key}}:</view>
+        <view wx:if='{{item}}'>
+          <view class='field-value'>{{item}}</view>
+        </view>
+        <view wx:else>
+          <view class='field-value'>null</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='cu-tabbar-height'></view>
+</scroll-view>

@@ -1,4 +1,8 @@
-
-<view class='padding-xl'>
-  <button class='cu-btn  bg-green shadow lg block' open-type="getUserInfo" bindgetuserinfo="getUserInfo">微信登录</button>
+<view class="auth">
+  <image src="http://demo.sc.chinaz.com/Files/pic/iconsico/5890/w6.ico" class="img" mode="aspectFill"></image>
+  <view class="title">微信授权页面</view>
+  <view class="describe">此页面是微信授权页面，点击下方按钮弹出授权页面</view>
+  <view>
+    <button class="btn" open-type='getUserInfo' bindgetuserinfo='getUserInfo'>点击微信授权</button>
+  </view>
 </view>

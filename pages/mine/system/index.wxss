@@ -1,0 +1,25 @@
+
+.items {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.fields {
+  margin: 10% 0%;
+}
+
+.field {
+  color: #aaa;
+  margin-top: 5px;
+}
+
+.field-name {
+  float: left;
+  width: 49%;
+  text-align: right;
+}
+
+.field-value {
+  margin-left: 51%;
+}

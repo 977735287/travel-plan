@@ -10,7 +10,11 @@
     "pages/album/show1/index",
     "pages/album/show2/index",
     "pages/mine/logs/index",
-    "pages/auth/wechat/index"
+    "pages/auth/wechat/index",
+    "pages/mine/system/index",
+    "pages/mine/user/index/index",
+    "pages/mine/user/email/index",
+    "pages/mine/user/phone/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",

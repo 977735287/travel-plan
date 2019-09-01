@@ -1,0 +1,24 @@
+<scroll-view scroll-y class="scrollPage">
+  <cu-custom bgImage="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3098043245,3200747665&fm=26&gp=0.jpg" isBack="{{true}}">
+    <view class='title-content' slot="content">
+      <text decode="{{true}}">更&nbsp;改&nbsp;手&nbsp;机&nbsp;号</text>
+    </view>
+  </cu-custom>
+  <view class='container'>
+    <form>
+      <view class="cu-form-group margin-top">
+        <view class="title">
+          <text decode="{{true}}">&nbsp;&nbsp;</text>
+        </view>
+        <input bindinput='phoneInputEdit' data-email='phone' value='{{phone}}' placeholder="手机号"></input>
+      </view>
+    </form>
+    <view class='margin-top margin-left margin-right'>
+      <button class="cu-btn block bg-blue margin-tb-sm lg" bindtap='phoneUpdate' disabled="{{hasPhoneValue}}" type="">
+        <text decode="{{true}}">确&nbsp;&nbsp;&nbsp;&nbsp;认</text>
+      </button>
+    </view>
+
+  </view>
+  <view class='cu-tabbar-height'></view>
+</scroll-view>

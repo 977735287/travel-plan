@@ -1,0 +1,24 @@
+<scroll-view scroll-y class="scrollPage">
+  <cu-custom bgImage="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3098043245,3200747665&fm=26&gp=0.jpg" isBack="{{true}}">
+    <view class='title-content' slot="content">
+      <text decode="{{true}}">更&nbsp;&nbsp;改&nbsp;&nbsp;邮&nbsp;&nbsp;箱</text>
+    </view>
+  </cu-custom>
+  <view class='container'>
+    <form>
+      <view class="cu-form-group margin-top">
+        <view class="title">
+          <text decode="{{true}}">&nbsp;&nbsp;</text>
+        </view>
+        <input bindinput='emailInputEdit' data-email='email' value='{{email}}' placeholder="邮箱"></input>
+      </view>
+    </form>
+    <view class='margin-top margin-left margin-right'>
+      <button class="cu-btn block bg-blue margin-tb-sm lg" bindtap='emailUpdate' disabled="{{hasEmailValue}}" type="">
+        <text decode="{{true}}">确&nbsp;&nbsp;&nbsp;&nbsp;认</text>
+      </button>
+    </view>
+
+  </view>
+  <view class='cu-tabbar-height'></view>
+</scroll-view>

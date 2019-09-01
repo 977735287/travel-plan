@@ -1,7 +1,7 @@
 <scroll-view scroll-y class="scrollPage">
   <cu-custom bgImage="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3098043245,3200747665&fm=26&gp=0.jpg" isBack="{{true}}">
     <view class='title-content' slot="content">
-      <text decode="{{true}}">旋&nbsp;&nbsp;转&nbsp;&nbsp;相&nbsp;&nbsp;册</text>
+      <text decode="{{true}}">日&nbsp;&nbsp;&nbsp;&nbsp;志</text>
     </view>
   </cu-custom>
   <view class='container'>
