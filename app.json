@@ -20,7 +20,8 @@
     "navigationBarBackgroundColor": "#39b54a",
     "navigationBarTitleText": "travel plan A",
     "navigationStyle": "custom",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "pageOrientation":"auto"
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"

@@ -1,4 +1,4 @@
-<scroll-view scroll-y class="scrollPage">
+<scroll-view scroll-y class="scrollPage" bindscrolltolower='loadMoreData'>
   <cu-custom bgImage="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3098043245,3200747665&fm=26&gp=0.jpg" isBack="{{false}}">
     <view class='title-content' slot="content">
       <text decode="{{true}}">发&nbsp;&nbsp;&nbsp;&nbsp;现</text>
@@ -17,11 +17,25 @@
               <label class="user-name">{{item.nickName}}</label>
             </view>
             <view>
-              <text class='user-content'>{{item.content}}</text>
+              <text class='user-content content-cut'>{{item.content}}</text>
             </view>
             <view class='photo-view'>
-              <view class='photo' wx:for='{{item.pictureList}}' wx:for-item='picture' wx:key='picture' style='width:{{photoWidth}}px;height:{{photoWidth}}px'>
-                <image bindtap='bindImgPreview' data-url='{{picture}}' data-index='{{index}}' src='{{picture}}' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
+              <view wx:if='{{item.pictureList.length == 1}}'>
+                <view class='photo' wx:for='{{item.pictureList}}' wx:for-item='picture' wx:key wx:for-index="id" style='width:{{onePhotoWidth}}px;height:{{onePhotoWidth}}px'>
+                  <image bindtap='bindImgPreview' data-url='{{picture}}' data-index='{{index}}' src='{{picture}}' style='width:{{onePhotoWidth}}px;height:{{onePhotoWidth}}px'></image>
+                </view>
+              </view>
+              <view wx:elif='{{item.pictureList.length == 2}}'>
+                <view class='photo' wx:for='{{item.pictureList}}' wx:for-item='picture' wx:key wx:for-index="id" style='width:{{twoPhotoWidth}}px;height:{{twoPhotoWidth}}px'>
+                  <image bindtap='bindImgPreview' data-url='{{picture}}' data-index='{{index}}' src='{{picture}}' style='width:{{twoPhotoWidth}}px;height:{{twoPhotoWidth}}px'></image>
+                </view>
+              </view>
+              <view wx:elif='{{item.pictureList.length > 2}}'>
+                <view wx:for='{{item.pictureList}}' wx:for-item='picture' wx:key wx:for-index="pic_index">
+                  <view class='photo' wx:if='{{pic_index < 9}}' style='width:{{threePhotoWidth}}px;height:{{threePhotoWidth}}px'>
+                    <image bindtap='bindImgPreview' data-url='{{picture}}' data-index='{{index}}' src='{{picture}}' style='width:{{threePhotoWidth}}px;height:{{threePhotoWidth}}px'></image>
+                  </view>
+                </view>
               </view>
             </view>
             <!-- 地理位置 -->
