@@ -11,7 +11,7 @@
   justify-content: space-between;
   padding: 0 0;
   box-sizing: border-box;
-} 
+}
 
 .nav-list {
   display: flex;
@@ -112,4 +112,10 @@
 
 .text-light {
   font-weight: 300;
+}
+
+.image-radius {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }

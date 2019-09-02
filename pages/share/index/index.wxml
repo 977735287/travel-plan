@@ -5,7 +5,39 @@
     </view>
   </cu-custom>
   <view class='container'>
-    
+    <view class="circleList" wx:for="{{circleList}}" wx:key wx:for-index="index">
+      <view class="circle margin-bottom">
+        <view class='left'>
+          <image class='user-avatar image-radius' src='{{item.icon}}' mode="widthFix"></image>
+        </view>
+
+        <view class='right'>
+          <view class="basic-content">
+            <view>
+              <label class="user-name">{{item.nickName}}</label>
+            </view>
+            <view>
+              <text class='user-content'>{{item.content}}</text>
+            </view>
+            <view class='photo-view'>
+              <view class='photo' wx:for='{{item.pictureList}}' wx:for-item='picture' wx:key='picture' style='width:{{photoWidth}}px;height:{{photoWidth}}px'>
+                <image bindtap='bindImgPreview' data-url='{{picture}}' data-index='{{index}}' src='{{picture}}' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
+              </view>
+            </view>
+            <!-- 地理位置 -->
+            <view class='user-address'>
+              <label class="user-address-text">
+                <text class="cuIcon-location text-green user-address-icon"></text>{{item.address}}</label>
+            </view>
+          </view>
+          <!-- 时间、删除按钮、点赞评论按钮 -->
+          <view class='time-action'>
+            <label>{{item.createTime}}</label>
+            <button bindtap='delete'>删除</button>
+          </view>
+        </view>
+      </view>
+    </view>
   </view>
   <view class='cu-tabbar-height'></view>
 </scroll-view>
