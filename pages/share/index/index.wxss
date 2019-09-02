@@ -52,7 +52,7 @@
 .content-cut {
   text-overflow: -o-ellipsis-lastline;
   overflow: hidden;
-  text-overflow: string;
+  text-overflow: clid;
   display: -webkit-box;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
