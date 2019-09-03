@@ -14,14 +14,16 @@
     "pages/mine/system/index",
     "pages/mine/user/index/index",
     "pages/mine/user/email/index",
-    "pages/mine/user/phone/index"
+    "pages/mine/user/phone/index",
+    "pages/mine/album/index/index",
+    "pages/mine/album/upload/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",
     "navigationBarTitleText": "travel plan A",
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white",
-    "pageOrientation":"auto"
+    "pageOrientation": "auto"
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"

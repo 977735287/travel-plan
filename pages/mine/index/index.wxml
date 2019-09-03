@@ -45,20 +45,26 @@
         </navigator>
       </view>
       <view class="cu-item arrow">
+        <navigator class="content" url="/pages/mine/album/index/index" hover-class="none">
+          <text class="cuIcon-album text-green"></text>
+          <text class="text-grey">我的相册</text>
+        </navigator>
+      </view>
+      <view class="cu-item arrow">
         <navigator class="content" url="/pages/mine/logs/index" hover-class="none">
-          <text class="cuIcon-formfill text-green"></text>
+          <text class="cuIcon-form text-green"></text>
           <text class="text-grey">日志</text>
         </navigator>
       </view>
       <view class="cu-item arrow">
         <navigator class="content" url="/pages/mine/system/index" hover-class="none">
-          <text class="cuIcon-mobilefill text-green"></text>
+          <text class="cuIcon-mobile text-green"></text>
           <text class="text-grey">系统信息</text>
         </navigator>
       </view>
       <view class="cu-item arrow">
         <button class="cu-btn content" open-type="feedback">
-          <text class="cuIcon-writefill text-cyan"></text>
+          <text class="cuIcon-write text-cyan"></text>
           <text class="text-grey">意见反馈</text>
         </button>
       </view>
