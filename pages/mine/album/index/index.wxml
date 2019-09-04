@@ -10,23 +10,42 @@
         <text>{{item.date}}</text>
       </view>
       <view class="pic-content" style="margin-left: {{selectStyle.c_left}}%; margin-right: {{selectStyle.c_right}}%;">
-        <view wx:for='{{item.imgList}}' wx:for-item='img' wx:key wx:for-index="id">
-          <image class="pic-item" bindtap="ViewImage" bindlongtap="bindImageLong" data-url='{{img}}' data-index='{{index}}' src='{{img}}' style="width: {{photoWidth}}px; height: {{photoWidth}}px;margin-top: {{id < 3 ? '0' : selectStyle.top}}%; margin-right: {{(id + 1) % 3 == 0 ? '0' : selectStyle.right}}%;"></image>
-          <view><checkbox class="radius-float-radio" style="margin-left: {{91/3 - 8 + (id % 3) * (91/3 + 3)}}%; margin-top: {{91/3 - 8 + (91/3 + 3)}}%;"></checkbox></view>
-        </view>
+        <checkbox-group bindchange='checkboxChange'>
+          <view wx:for='{{item.imgList}}' wx:for-item='img' wx:key wx:for-index="id">
+            <view class='pic' style="width: {{photoWidth}}px; height: {{photoWidth}}px;margin-top: {{id < 3 ? '0' : selectStyle.top}}%; margin-right: {{(id + 1) % 3 == 0 ? '0' : selectStyle.right}}%;">
+              <image class="pic-item" bindtap="ViewImage" bindlongpress="bindImageLong" data-url='{{img}}' data-index='{{index}}' src='{{img}}' style="width: {{photoWidth}}px; height: {{photoWidth}}px;"></image>
+              <view wx:if='{{isSelect}}'>
+                <view class="pic-checkbox">
+                  <checkbox value='{{img}}' checked='{{defaultSelectPic == img ? true : false}}'></checkbox>
+                </view>
+              </view>
+              <!-- <view><checkbox class="radius-float-radio" style="margin-left: {{91/3 - 8 + (id % 3) * (91/3 + 3)}}%; margin-top: {{91/3 - 8 + (91/3 + 3) * (id / 3 | Int)}}%;"></checkbox></view> -->
+            </view>
+          </view>
+        </checkbox-group>
       </view>
     </view>
   </view>
   <view wx:if='{{!isSelect}}'>
-    <view class='radius-float-1'>
+    <view class='radius-float-view'>
       <navigator url="/pages/mine/album/view/index" hover-class="none">
         <text class='cuIcon-attention text-white view-icon'></text>
       </navigator>
     </view>
-    <view class='radius-float'>
+    <view class='radius-float-add'>
       <navigator url="/pages/mine/album/upload/index" hover-class="none">
         <text class='cuIcon-add text-white add-icon'></text>
       </navigator>
+    </view>
+  </view>
+  <view class='radius-float-btn' wx:if='{{isSelect}}'>
+    <view class='float-btn' bindtap='deleteImage'>
+      <text class=" cuIcon-delete "></text>
+      <text decode="{{true}}">&nbsp;&nbsp;删&nbsp;&nbsp;除</text>
+    </view>
+    <view class='float-btn' bindtap='cancel'>
+      <text class="cuIcon-close"></text>
+      <text decode="{{true}}">&nbsp;&nbsp;取&nbsp;&nbsp;消</text>
     </view>
   </view>
   <view class='cu-tabbar-height'></view>

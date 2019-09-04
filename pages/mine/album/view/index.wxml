@@ -4,11 +4,11 @@
       <text decode="{{true}}">&nbsp;&nbsp;</text>
     </view>
   </cu-custom>
-  <image class='pic-item' src='http://tmp/wx4f16e5470403ed18.o6zAJswtroEIPJe3pzO1wZY4UUpk.stYqp8KHr0UU83d538fe1934257a712c5b6905b98d2c.jpg' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
-  <image class='pic-item' src='http://tmp/wx4f16e5470403ed18.o6zAJswtroEIPJe3pzO1wZY4UUpk.stYqp8KHr0UU83d538fe1934257a712c5b6905b98d2c.jpg' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
-  <image class='pic-item' src='http://tmp/wx4f16e5470403ed18.o6zAJswtroEIPJe3pzO1wZY4UUpk.stYqp8KHr0UU83d538fe1934257a712c5b6905b98d2c.jpg' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
-  <image class='pic-item' src='http://tmp/wx4f16e5470403ed18.o6zAJswtroEIPJe3pzO1wZY4UUpk.stYqp8KHr0UU83d538fe1934257a712c5b6905b98d2c.jpg' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
-  <image class='pic-item' src='http://tmp/wx4f16e5470403ed18.o6zAJswtroEIPJe3pzO1wZY4UUpk.stYqp8KHr0UU83d538fe1934257a712c5b6905b98d2c.jpg' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
-  <image class='pic-item' src='http://tmp/wx4f16e5470403ed18.o6zAJswtroEIPJe3pzO1wZY4UUpk.stYqp8KHr0UU83d538fe1934257a712c5b6905b98d2c.jpg' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
+  <image class='pic-item' src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3146277763,293920617&fm=111&gp=0.jpg' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
+  <image class='pic-item' src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3146277763,293920617&fm=111&gp=0.jpg' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
+  <image class='pic-item' src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3146277763,293920617&fm=111&gp=0.jpg' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
+  <image class='pic-item' src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3146277763,293920617&fm=111&gp=0.jpg' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
+  <image class='pic-item' src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3146277763,293920617&fm=111&gp=0.jpg' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
+  <image class='pic-item' src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3146277763,293920617&fm=111&gp=0.jpg' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
 
 </scroll-view>

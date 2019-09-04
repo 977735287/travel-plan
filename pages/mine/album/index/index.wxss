@@ -2,7 +2,7 @@ page {
   background-color: white;
 }
 
-.radius-float {
+.radius-float-add {
   color: #fff;
   position: fixed;
   display: flex;
@@ -17,7 +17,7 @@ page {
   opacity: 0.6;
 }
 
-.radius-float-1 {
+.radius-float-view {
   color: #fff;
   position: fixed;
   display: flex;
@@ -32,13 +32,18 @@ page {
   opacity: 0.6;
 }
 
-.radius-float-radio {
-  border-radius: 50%;
+.radius-float-btn {
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.6;
+  bottom: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 7%;
+  background:  white;
+  border-top:0.5rpx solid rgba(0, 0, 0, 0.418);
+  /* opacity: 0.6; */
 }
 
 .add-icon {
@@ -56,10 +61,30 @@ page {
 
 .pic-content {
   margin-top: 2%;
-  /* margin-left: 3%; */
+}
+
+.pic {
+  float: left;
+  position: relative;
 }
 
 .pic-item {
-  /* margin-top: 0.5%; */
-  float: left;
+  margin-top: -1%;
+}
+
+.pic-checkbox {
+  position: absolute;
+  bottom: 10rpx;
+  right: 10rpx;
+  opacity: 0.6;
+}
+
+.float-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  color: rgba(30, 35, 39, 0.993);
 }
