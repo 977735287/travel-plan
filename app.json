@@ -15,7 +15,12 @@
     "pages/mine/user/index/index",
     "pages/mine/user/email/index",
     "pages/mine/user/phone/index",
+<<<<<<< HEAD
     "pages/home/add/index"
+=======
+    "pages/mine/album/index/index",
+    "pages/mine/album/upload/index"
+>>>>>>> e39b1b20da98cbe5669a46ab66944bde03eeec1b
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",

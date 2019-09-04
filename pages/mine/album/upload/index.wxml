@@ -1,0 +1,33 @@
+<scroll-view scroll-y class="scrollPage">
+  <cu-custom bgImage="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3098043245,3200747665&fm=26&gp=0.jpg" isBack="{{true}}">
+    <view class='title-content' slot="content">
+      <text decode="{{true}}">相&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册</text>
+    </view>
+  </cu-custom>
+  <view class='container'>
+    <view class="cu-bar bg-white margin-top">
+      <view class="action">
+        图片上传
+      </view>
+      <view class="action">
+        {{imgList.length}}/9
+      </view>
+    </view>
+    <view class="cu-form-group">
+      <view class="grid col-4 grid-square flex-sub">
+        <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+          <image src='{{imgList[index]}}' mode='aspectFill'></image>
+          <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+            <text class="cuIcon-close"></text>
+          </view>
+        </view>
+        <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<9}}">
+          <text class="cuIcon-cameraadd"></text>
+        </view>
+      </view>
+    </view>
+    <button class="cu-btn block line-orange lg margin-top" bindtap='bindUploadPic' disabled="{{noImage}}">
+    <text class="cuIcon-upload"></text> 上传</button>
+  </view>
+  <view class='cu-tabbar-height'></view>
+</scroll-view>

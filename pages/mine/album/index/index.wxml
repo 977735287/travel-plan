@@ -1,0 +1,28 @@
+<scroll-view scroll-y class="scrollPage">
+  <cu-custom bgImage="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3098043245,3200747665&fm=26&gp=0.jpg" isBack="{{true}}">
+    <view class='title-content' slot="content">
+      <text decode="{{true}}">相&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册</text>
+    </view>
+  </cu-custom>
+  <view class='container'>
+    <view wx:for="{{pics}}" wx:key wx:for-index="index">
+      <view class='pic-date'>
+        <text>{{item.date}}</text>
+      </view>
+
+      <view wx:for='{{item.imgList}}' wx:for-item='img' wx:key wx:for-index="id">
+        <view class='pic-content'>
+          <view class='pic-item'>
+            <image bindtap="ViewImage" data-url='{{img}}' data-index='{{index}}' src='{{img}}' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='radius-float'>
+    <navigator url="/pages/mine/album/upload/index" hover-class="none">
+      <text class='cuIcon-add text-white add-icon'></text>
+    </navigator>
+  </view>
+  <view class='cu-tabbar-height'></view>
+</scroll-view>
