@@ -284,6 +284,11 @@
         </view>
       </view>
     </view>
+    <view class="round-float">
+      <navigator url='/pages/home/add/index'>
+        <text class="cuIcon-add text-white"></text>
+      </navigator>
+    </view>
   </view>
-  <view class='cu-tabbar-height'></view>
+  <view class='cu-tabbar-height' style="margin-top: 30%;"></view>
 </scroll-view>

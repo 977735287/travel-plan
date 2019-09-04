@@ -2,7 +2,7 @@ const app = getApp()
 
 Page({
   data: {
-    PageCur: 'share',
+    PageCur: 'home',
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
   onLoad: function() {

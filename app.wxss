@@ -5,6 +5,13 @@
   height: 100vh;
 }
 
+/* 隐藏滚动条 */
+/* ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+} */
+
 .container {
   display: flex;
   flex-direction: column;
@@ -118,4 +125,24 @@
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
+}
+
+.round-float {
+    height: 120rpx;
+    width: 120rpx;
+    background-color: #2a59dbde;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 150rpx;
+    right: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+    opacity: 0.5;
+}
+
+.round-float navigator{
+    font-size: 70rpx;
+    text-align: center;
 }
