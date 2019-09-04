@@ -1,4 +1,5 @@
 const app = getApp()
+const util = require('../../../utils/util.js')
 
 Component({
   options: {
@@ -28,6 +29,9 @@ Component({
         wx.hideLoading()
       }
     })
+  },
+  detached() {
+    wx.hideLoading()
   },
   methods: {
     loadMoreData (e) {

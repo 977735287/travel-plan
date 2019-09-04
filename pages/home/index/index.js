@@ -1,14 +1,17 @@
 const app = getApp()
+const util = require('../../../utils/util.js')
 
 Component({
   options: {
     addGlobalClass: true,
   },
   data: {
-
+    date: ''
   },
   attached() {
-    
+    this.setData({
+      date: util.formatDate(new Date(), "-")
+    })
   },
   methods: {
 

@@ -1,14 +1,22 @@
 const app = getApp()
+const util = require('../../../../utils/util.js')
 
 Page({
   data: {
-    photoWidth: wx.getSystemInfoSync().windowWidth * 0.90 / 3,
+    photoWidth: wx.getSystemInfoSync().windowWidth * 0.99 / 3, //图片宽度
     pics: [],
-    imgList: []
+    imgList: [],
+    isSelect: false,
+    selectStyle: {
+      top: 0.5,
+      right: 0.5,
+      c_left: 0,
+      c_right: 0
+    }
   },
-  onLoad: function () {},
-  onReady: function () { },
-  onShow: function () {
+  onLoad: function() {},
+  onReady: function() {},
+  onShow: function() {
     var pics = wx.getStorageSync('pics') || []
     this.setData({
       pics: pics
@@ -19,17 +27,34 @@ Page({
       })
     }
   },
-  onHide: function () { },
-  onUnload: function () { },
-  onPullDownRefresh: function () { },
-  onReachBottom: function () { },
-  onShareAppMessage: function () { },
+  onHide: function() {},
+  onUnload: function() {},
+  onPullDownRefresh: function() {},
+  onReachBottom: function() {},
+  onShareAppMessage: function() {},
 
   ViewImage(e) {
-    console.info(this.data.imgList)
-    wx.previewImage({
-      urls: this.data.imgList,
-      current: e.currentTarget.dataset.url
-    });
+    if (this.data.isSelect) {
+
+    } else {
+      wx.previewImage({
+        urls: this.data.imgList,
+        current: e.currentTarget.dataset.url
+      })
+    }
   },
+
+  bindImageLong(e) {
+    this.setData({
+      photoWidth: wx.getSystemInfoSync().windowWidth * 0.91 / 3,
+      selectStyle: {
+        top: 3,
+        right: 3,
+        c_left: 1.5,
+        c_right: 1.5
+      },
+      isSelect: true
+    })
+  },
+
 })

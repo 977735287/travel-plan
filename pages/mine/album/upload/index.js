@@ -1,4 +1,5 @@
 const app = getApp()
+const util = require('../../../../utils/util.js')
 
 Page({
   data: {
@@ -6,15 +7,15 @@ Page({
     imgList: [],
     noImage: true
   },
-  onLoad: function () {},
+  onLoad: function() {},
 
-  onReady: function () { },
-  onShow: function () { },
-  onHide: function () { },
-  onUnload: function () { },
-  onPullDownRefresh: function () { },
-  onReachBottom: function () { },
-  onShareAppMessage: function () { },
+  onReady: function() {},
+  onShow: function() {},
+  onHide: function() {},
+  onUnload: function() {},
+  onPullDownRefresh: function() {},
+  onReachBottom: function() {},
+  onShareAppMessage: function() {},
 
   ChooseImage() {
     wx.chooseImage({
@@ -55,7 +56,7 @@ Page({
           this.setData({
             imgList: this.data.imgList
           })
-          if(this.data.imgList.length == 0) {
+          if (this.data.imgList.length == 0) {
             this.setData({
               noImage: true
             })
@@ -67,10 +68,24 @@ Page({
 
   bindUploadPic(e) {
     var pics = wx.getStorageSync('pics') || []
-    var pic = {}
-    pic.date = '2019.09.03'
-    pic.imgList = this.data.imgList
-    pics.unshift(pic)
+    var pic
+    var date = util.formatDate(new Date(), ".");
+    pics.forEach((item, index) => {
+      if (item.date == date) {
+        pic = item
+      }
+    })
+    if (pic) {
+      this.data.imgList.reverse()
+      this.data.imgList.forEach(item => pic.imgList.unshift(item))
+    } else {
+      pic = {}
+      pic.date = date
+      pic.imgList = this.data.imgList
+      // daox
+      // pic.imgList.reverse() 
+      pics.unshift(pic)
+    }
     wx.setStorageSync('pics', pics)
     wx.navigateBack({})
   },

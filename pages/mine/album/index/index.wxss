@@ -17,8 +17,36 @@ page {
   opacity: 0.6;
 }
 
+.radius-float-1 {
+  color: #fff;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 16%;
+  right: 5%;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background: #72e2dd;
+  opacity: 0.6;
+}
+
+.radius-float-radio {
+  border-radius: 50%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+}
+
 .add-icon {
   font-size: 70rpx;
+}
+
+.view-icon {
+  font-size: 60rpx;
 }
 
 .pic-date {
@@ -28,10 +56,10 @@ page {
 
 .pic-content {
   margin-top: 2%;
-  margin-left: 3%;
+  /* margin-left: 3%; */
 }
 
 .pic-item {
-  margin-right: 2%;
+  /* margin-top: 0.5%; */
   float: left;
 }
