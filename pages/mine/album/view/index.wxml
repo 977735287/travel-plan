@@ -1,14 +1,50 @@
 <scroll-view scroll-y class="scrollPage">
-  <cu-custom bgImage="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3098043245,3200747665&fm=26&gp=0.jpg" isBack="{{true}}">
+  <cu-custom isBack="{{true}}">
     <view class='title-content' slot="content">
       <text decode="{{true}}">&nbsp;&nbsp;</text>
     </view>
   </cu-custom>
-  <image class='pic-item' src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3146277763,293920617&fm=111&gp=0.jpg' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
-  <image class='pic-item' src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3146277763,293920617&fm=111&gp=0.jpg' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
-  <image class='pic-item' src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3146277763,293920617&fm=111&gp=0.jpg' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
-  <image class='pic-item' src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3146277763,293920617&fm=111&gp=0.jpg' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
-  <image class='pic-item' src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3146277763,293920617&fm=111&gp=0.jpg' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
-  <image class='pic-item' src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3146277763,293920617&fm=111&gp=0.jpg' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>
+  <view class='view-content'>
+    <view class="wrap">
+      <view class="cube">
+        <view class="out_front">
+          <image src="{{image.out_front}}" class="pic" />
+        </view>
+        <view class="out_back">
+          <image src="{{image.out_back}}" class="pic" />
+        </view>
+        <view class="out_left">
+          <image src="{{image.out_left}}" class="pic" />
+        </view>
+        <view class="out_right">
+          <image src="{{image.out_right}}" class="pic" />
+        </view>
+        <view class="out_top">
+          <image src="{{image.out_top}}" class="pic" />
+        </view>
+        <view class="out_bottom">
+          <image src="{{image.out_bottom}}" class="pic" />
+        </view>
+        <span class="in_front">
+          <image src="{{image.in_front}}" class="in_pic" />
+        </span>
+        <span class="in_back">
+          <image src="{{image.in_back}}" class="in_pic" />
+        </span>
+        <span class="in_left">
+          <image src="{{image.in_left}}" class="in_pic" />
+        </span>
+        <span class="in_right">
+          <image src="{{image.in_right}}" class="in_pic" />
+        </span>
+        <span class="in_top">
+          <image src="{{image.in_top}}" class="in_pic" />
+        </span>
+        <span class="in_bottom">
+          <image src="{{image.in_bottom}}" class="in_pic" />
+        </span>
+      </view>
+    </view>
+  </view>
 
 </scroll-view>

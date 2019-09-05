@@ -284,7 +284,7 @@
         </view>
       </view>
     </view>
-    <view class="round-float">
+    <view class="round-float bg-purple">
       <navigator url='/pages/home/add/index'>
         <text class="cuIcon-add text-white"></text>
       </navigator>

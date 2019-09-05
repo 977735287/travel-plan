@@ -130,7 +130,6 @@
 .round-float {
     height: 120rpx;
     width: 120rpx;
-    background-color: #2a59dbde;
     border-radius: 100%;
     position: fixed;
     bottom: 150rpx;
