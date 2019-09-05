@@ -2,6 +2,14 @@ page {
   background-color: white;
 }
 
+.bg-color-1 {
+  background: #72e2dd;
+}
+
+.bg-color-1 {
+  background: #72e2dd;
+}
+
 .radius-float-add {
   color: #fff;
   position: fixed;
@@ -13,7 +21,6 @@ page {
   width: 120rpx;
   height: 120rpx;
   border-radius: 50%;
-  background: #72e2dd;
   opacity: 0.6;
 }
 
@@ -28,7 +35,6 @@ page {
   width: 120rpx;
   height: 120rpx;
   border-radius: 50%;
-  background: #72e2dd;
   opacity: 0.6;
 }
 

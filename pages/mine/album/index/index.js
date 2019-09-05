@@ -16,14 +16,18 @@ Page({
     },
     defaultSelectPic: '',
     selectImageList: [],
-    checkboxStatus: {}
+    checkboxStatus: {},
+    isTouchAdd: false,
+    isTouchView: false,
   },
   onLoad: function() {},
   onReady: function() {},
   onShow: function() {
     var pics = wx.getStorageSync('pics') || []
     this.setData({
-      pics: pics
+      pics: pics,
+      isTouchAdd: false,
+      isTouchView: false
     })
     for (var i = 0; i < pics.length; i++) {
       this.setData({
@@ -135,6 +139,30 @@ Page({
           this.initData()
         }
       }
+    })
+  },
+
+  viewTouchStart(){
+    this.setData({
+      isTouchView: true
+    })
+  },
+
+  addTouchStart() {
+    this.setData({
+      isTouchAdd: true
+    })
+  },
+
+  viewTouchEnd() {
+    this.setData({
+      isTouchView: false
+    })
+  },
+
+  addTouchEnd() {
+    this.setData({
+      isTouchAdd: false
     })
   },
 

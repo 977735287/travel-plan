@@ -27,12 +27,12 @@
     </view>
   </view>
   <view wx:if='{{!isSelect}}'>
-    <view class='radius-float-view'>
+    <view class="radius-float-view bg-{{isTouchView ? 'grey' : 'cyan'}}" bindtouchstart="viewTouchStart" bindtouchend="viewTouchEnd">
       <navigator url="/pages/mine/album/view/index" hover-class="none">
         <text class='cuIcon-attention text-white view-icon'></text>
       </navigator>
     </view>
-    <view class='radius-float-add'>
+    <view class="radius-float-add bg-{{isTouchAdd ? 'grey' : 'cyan'}}" bindtouchstart="addTouchStart" bindtouchend="addTouchEnd">
       <navigator url="/pages/mine/album/upload/index" hover-class="none">
         <text class='cuIcon-add text-white add-icon'></text>
       </navigator>
@@ -48,5 +48,5 @@
       <text decode="{{true}}">&nbsp;&nbsp;取&nbsp;&nbsp;消</text>
     </view>
   </view>
-  <view style="height: 12%;" ></view>
+  <view style="height: 30%;" ></view>
 </scroll-view>
