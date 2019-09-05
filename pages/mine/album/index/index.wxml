@@ -10,13 +10,13 @@
         <text>{{item.date}}</text>
       </view>
       <view class="pic-content" style="margin-left: {{selectStyle.c_left}}%; margin-right: {{selectStyle.c_right}}%;">
-        <checkbox-group bindchange='checkboxChange'>
+        <checkbox-group>
           <view wx:for='{{item.imgList}}' wx:for-item='img' wx:key wx:for-index="id">
             <view class='pic' style="width: {{photoWidth}}px; height: {{photoWidth}}px;margin-top: {{id < 3 ? '0' : selectStyle.top}}%; margin-right: {{(id + 1) % 3 == 0 ? '0' : selectStyle.right}}%;">
-              <image class="pic-item" bindtap="ViewImage" bindlongpress="bindImageLong" data-url='{{img}}' data-index='{{index}}' src='{{img}}' style="width: {{photoWidth}}px; height: {{photoWidth}}px;"></image>
+              <image class="pic-item" bindtap="ViewImage" bindlongpress="bindImageLong" data-url='{{img}}' data-index='{{index}}' data-id='{{id}}' src='{{img}}' style="width: {{photoWidth}}px; height: {{photoWidth}}px;"></image>
               <view wx:if='{{isSelect}}'>
-                <view class="pic-checkbox">
-                  <checkbox value='{{img}}' checked='{{defaultSelectPic == img ? true : false}}'></checkbox>
+                <view class="pic-checkbox" style="opacity: {{checkboxStatus[index + '-' + id] ? '1' : '0.5'}};">
+                  <checkbox bindtap="checkboxChange" id="{{index}}-{{id}}" data-url='{{img}}' value='{{img}}' checked="{{checkboxStatus[index + '-' + id]}}"></checkbox>
                 </view>
               </view>
               <!-- <view><checkbox class="radius-float-radio" style="margin-left: {{91/3 - 8 + (id % 3) * (91/3 + 3)}}%; margin-top: {{91/3 - 8 + (91/3 + 3) * (id / 3 | Int)}}%;"></checkbox></view> -->
@@ -48,5 +48,5 @@
       <text decode="{{true}}">&nbsp;&nbsp;取&nbsp;&nbsp;消</text>
     </view>
   </view>
-  <view class='cu-tabbar-height'></view>
+  <view style="height: 12%;" ></view>
 </scroll-view>

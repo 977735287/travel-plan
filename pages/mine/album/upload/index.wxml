@@ -10,7 +10,7 @@
         图片上传
       </view>
       <view class="action">
-        {{imgList.length}}/9
+        {{imgList.length}}/{{defaultMaxImage}}
       </view>
     </view>
     <view class="cu-form-group">
@@ -21,7 +21,7 @@
             <text class="cuIcon-close"></text>
           </view>
         </view>
-        <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<9}}">
+        <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<defaultMaxImage}}">
           <text class="cuIcon-cameraadd"></text>
         </view>
       </view>

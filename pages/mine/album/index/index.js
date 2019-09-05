@@ -15,7 +15,8 @@ Page({
       c_right: 0
     },
     defaultSelectPic: '',
-    selectImageList: []
+    selectImageList: [],
+    checkboxStatus: {}
   },
   onLoad: function() {},
   onReady: function() {},
@@ -39,16 +40,22 @@ Page({
   ViewImage(e) {
     var url = e.currentTarget.dataset.url;
     if (this.data.isSelect) {
-      // if (this.data.defaultSelectPic == url) {
-      //   this.setData({
-      //     defaultSelectPic: ''
-      //   })
-      // }else {
-      //   this.setData({
-      //     defaultSelectPic: url,
-      //     selectImageList: this.data.selectImageList.concat(e.currentTarget.dataset.url)
-      //   })
-      // }
+      var index = e.currentTarget.dataset.index
+      var id = e.currentTarget.dataset.id
+      var key = index + '-' + id
+      var status = this.data.checkboxStatus
+      var selectImageList = this.data.selectImageList
+      if (status[key]) {
+        status[key] = false
+        array.remove(selectImageList, url);
+      } else {
+        status[key] = true
+        selectImageList = selectImageList.concat(url)
+      }
+      this.setData({
+        checkboxStatus: status,
+        selectImageList: selectImageList
+      })
     } else {
       wx.previewImage({
         urls: this.data.imgList,
@@ -58,7 +65,15 @@ Page({
   },
 
   bindImageLong(e) {
+    if (this.data.isSelect) {
+      return
+    }
     var url = e.currentTarget.dataset.url
+    var index = e.currentTarget.dataset.index
+    var id = e.currentTarget.dataset.id
+    var key = index + '-' + id
+    var status = this.data.checkboxStatus
+    status[key] = true
     this.setData({
       photoWidth: wx.getSystemInfoSync().windowWidth * 0.91 / 3,
       selectStyle: {
@@ -68,14 +83,26 @@ Page({
         c_right: 1.5
       },
       isSelect: true,
-      defaultSelectPic: url,
+      checkboxStatus: status,
       selectImageList: this.data.selectImageList.concat(url)
     })
   },
 
   checkboxChange(e) {
+    var url = e.currentTarget.dataset.url
+    var key = e.currentTarget.id
+    var status = this.data.checkboxStatus
+    var selectImageList = this.data.selectImageList
+    if (status[key]) {
+      status[key] = false
+      array.remove(selectImageList, url)
+    } else {
+      status[key] = true
+      selectImageList = selectImageList.concat(url)
+    }
     this.setData({
-      selectImageList: e.detail.value
+      checkboxStatus: status,
+      selectImageList: selectImageList
     })
   },
 
@@ -84,9 +111,12 @@ Page({
   },
 
   deleteImage(e) {
+    var count = this.data.selectImageList.length
+    if (count == 0) {
+      return
+    }
     wx.showModal({
-      title: '米粒',
-      content: '确定要删除吗？',
+      content: '已选 ' + count +' 张照片，确定要删除吗？',
       cancelText: '取消',
       confirmText: '确定',
       success: res => {
@@ -120,7 +150,8 @@ Page({
       },
       defaultSelectPic: '',
       selectImageList: [],
-      pics: this.data.pics
+      pics: this.data.pics,
+      checkboxStatus: {}
     })
   }
 })

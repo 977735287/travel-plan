@@ -76,7 +76,6 @@ page {
   position: absolute;
   bottom: 10rpx;
   right: 10rpx;
-  opacity: 0.6;
 }
 
 .float-btn {
