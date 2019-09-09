@@ -44,7 +44,6 @@ page {
   position: absolute;
   width: 200px;
   height: 200px;
-  opacity: 0.5;
   transition: all 0.4s;
 }
 
@@ -55,28 +54,34 @@ page {
   height: 200px;
 }
 
-.cube .out_front {
+.out_front {
   transform: rotateY(0deg) translateZ(100px);
+  opacity: 0.5;
 }
 
-.cube .out_back {
+.out_back {
   transform: translateZ(-100px) rotateY(180deg);
+  opacity: 0.5;
 }
 
-.cube .out_left {
+.out_left {
   transform: rotateY(90deg) translateZ(100px);
+  opacity: 0.5;
 }
 
-.cube .out_right {
+.out_right {
   transform: rotateY(-90deg) translateZ(100px);
+  opacity: 0.5;
 }
 
-.cube .out_top {
+.out_top {
   transform: rotateX(90deg) translateZ(100px);
+  opacity: 0.5;
 }
 
-.cube .out_bottom {
+.out_bottom {
   transform: rotateX(-90deg) translateZ(100px);
+  opacity: 0.5;
 }
 
 /*定义小正方体样式*/
@@ -89,63 +94,76 @@ page {
   left: 50px;
 }
 
-.cube .in_pic {
+.in_pic {
   width: 100px;
   height: 100px;
 }
 
-.cube .in_front {
+.in_front {
   transform: rotateY(0deg) translateZ(50px);
 }
 
-.cube .in_back {
+.in_back {
   transform: translateZ(-50px) rotateY(180deg);
 }
 
-.cube .in_left {
+.in_left {
   transform: rotateY(90deg) translateZ(50px);
 }
 
-.cube .in_right {
+.in_right {
   transform: rotateY(-90deg) translateZ(50px);
 }
 
-.cube .in_top {
+.in_top {
   transform: rotateX(90deg) translateZ(50px);
 }
 
-.cube .in_bottom {
+.in_bottom {
   transform: rotateX(-90deg) translateZ(50px);
 }
 
 /*鼠标移入后样式*/
 
-.cube:hover .out_front {
+.ext_out_front {
   opacity: 1;
   transform: rotateY(0deg) translateZ(200px);
 }
 
-.cube:hover .out_back {
+.ext_out_back {
   opacity: 1;
   transform: translateZ(-200px) rotateY(180deg);
 }
 
-.cube:hover .out_left {
+.ext_out_left {
   opacity: 1;
   transform: rotateY(90deg) translateZ(200px);
 }
 
-.cube:hover .out_right {
+.ext_out_right {
   opacity: 1;
   transform: rotateY(-90deg) translateZ(200px);
 }
 
-.cube:hover .out_top {
+.ext_out_top {
   opacity: 1;
   transform: rotateX(90deg) translateZ(200px);
 }
 
-.cube:hover .out_bottom {
+.ext_out_bottom {
   opacity: 1;
   transform: rotateX(-90deg) translateZ(200px);
+}
+
+.preview {
+  background-color: black;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
 }

@@ -6,45 +6,51 @@
   </cu-custom>
   <view class='view-content'>
     <view class="wrap">
-      <view class="cube">
-        <view class="out_front">
-          <image src="{{image.out_front}}" class="pic" />
+      <view class="cube" bindtap='bindDoubleClick' bindtouchmove="scroll" bindtouchstart='scroll' bindtouchend='endTou'>
+        <view class="{{isExt ? 'ext_out_front' : 'out_front'}}">
+          <image bindtap='ViewImage' data-url="{{image.out_front}}" src="{{image.out_front}}" class="pic" />
         </view>
-        <view class="out_back">
-          <image src="{{image.out_back}}" class="pic" />
+        <view class="{{isExt ? 'ext_out_back' : 'out_back'}}">
+          <image bindtap='ViewImage' data-url="{{image.out_back}}" src="{{image.out_back}}" class="pic" />
         </view>
-        <view class="out_left">
-          <image src="{{image.out_left}}" class="pic" />
+        <view class="{{isExt ? 'ext_out_left' : 'out_left'}}">
+          <image bindtap='ViewImage' data-url="{{image.out_left}}" src="{{image.out_left}}" class="pic" />
         </view>
-        <view class="out_right">
-          <image src="{{image.out_right}}" class="pic" />
+        <view class="{{isExt ? 'ext_out_right' : 'out_right'}}">
+          <image bindtap='ViewImage' data-url="{{image.out_right}}" src="{{image.out_right}}" class="pic" />
         </view>
-        <view class="out_top">
-          <image src="{{image.out_top}}" class="pic" />
+        <view class="{{isExt ? 'ext_out_top' : 'out_top'}}">
+          <image bindtap='ViewImage' data-url="{{image.out_top}}" src="{{image.out_top}}" class="pic" />
         </view>
-        <view class="out_bottom">
-          <image src="{{image.out_bottom}}" class="pic" />
+        <view class="{{isExt ? 'ext_out_bottom' : 'out_bottom'}}">
+          <image bindtap='ViewImage' data-url="{{image.out_bottom}}" src="{{image.out_bottom}}" class="pic" />
         </view>
         <span class="in_front">
-          <image src="{{image.in_front}}" class="in_pic" />
+          <image bindtap='ViewImage' data-url="{{image.in_front}}" src="{{image.in_front}}" class="in_pic" />
         </span>
         <span class="in_back">
-          <image src="{{image.in_back}}" class="in_pic" />
+          <image bindtap='ViewImage' data-url="{{image.in_back}}" src="{{image.in_back}}" class="in_pic" />
         </span>
         <span class="in_left">
-          <image src="{{image.in_left}}" class="in_pic" />
+          <image bindtap='ViewImage' data-url="{{image.in_left}}" src="{{image.in_left}}" class="in_pic" />
         </span>
         <span class="in_right">
-          <image src="{{image.in_right}}" class="in_pic" />
+          <image bindtap='ViewImage' data-url="{{image.in_right}}" src="{{image.in_right}}" class="in_pic" />
         </span>
         <span class="in_top">
-          <image src="{{image.in_top}}" class="in_pic" />
+          <image bindtap='ViewImage' data-url="{{image.in_top}}" src="{{image.in_top}}" class="in_pic" />
         </span>
         <span class="in_bottom">
-          <image src="{{image.in_bottom}}" class="in_pic" />
+          <image bindtap='ViewImage' data-url="{{image.in_bottom}}" src="{{image.in_bottom}}" class="in_pic" />
         </span>
       </view>
     </view>
   </view>
 
 </scroll-view>
+
+<view wx:if="{{isPreview}}" class='preview' bindtap='hide'>
+  <view>
+    <image style="width: {{imagewidth}}px; height: {{imageheight}}px;" src="{{selectImageUrl}}" bindload='imageLoad' />
+  </view>
+</view>
