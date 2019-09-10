@@ -18,7 +18,8 @@
     "pages/home/add/index",
     "pages/mine/album/index/index",
     "pages/mine/album/upload/index",
-    "pages/mine/album/view/index"
+    "pages/mine/album/view/index",
+    "pages/share/add/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",

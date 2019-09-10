@@ -52,6 +52,11 @@
         </view>
       </view>
     </view>
+    <view class="round-float bg-purple">
+      <navigator url='/pages/share/add/index'>
+        <text class="cuIcon-add text-white"></text>
+      </navigator>
+    </view>
   </view>
   <view class='cu-tabbar-height'></view>
 </scroll-view>

@@ -1,0 +1,28 @@
+<scroll-view scroll-y class="scrollPage">
+  <cu-custom isBack="{{true}}">
+    <view class='title-content' slot="content">
+      <text decode="{{true}}">&nbsp;&nbsp;</text>
+    </view>
+  </cu-custom>
+  <view class='container margin-left margin-right'>
+    <view class="cu-form-group margin-top">
+      <textarea maxlength="-1" bindinput="textareaAInput" placeholder="请输入内容..." style="height: 200rpx;"></textarea>
+    </view>
+    <view class="cu-bar bg-white">
+    </view>
+    <view class="cu-form-group">
+      <view class="grid col-3 grid-square flex-sub">
+        <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+          <image src='{{imgList[index]}}' style='width: 200rpx; height: 200rpx;'></image>
+          <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+            <text class="cuIcon-close"></text>
+          </view>
+        </view>
+        <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<defaultMaxImage}}">
+          <text class="cuIcon-cameraadd"></text>
+        </view>
+      </view>
+    </view>
+    <button class="cu-btn block bg-blue lg margin-top" bindtap='bindUploadPic' disabled="{{noImage}}" style="buttom: 0;">发表</button>
+  </view>
+</scroll-view>
