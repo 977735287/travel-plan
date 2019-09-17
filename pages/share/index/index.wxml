@@ -5,16 +5,16 @@
     </view>
   </cu-custom>
   <view class='container'>
-    <view class="circleList" wx:for="{{circleList}}" wx:key wx:for-index="index">
+    <view class="circleList" wx:for="{{shareInfoList}}" wx:key wx:for-index="index">
       <view class="circle margin-bottom">
         <view class='left'>
-          <image class='user-avatar image-radius' src='{{item.icon}}' mode="widthFix"></image>
+          <image class='user-avatar image-radius' src='{{item.user.avatarUrl}}' mode="widthFix"></image>
         </view>
 
         <view class='right'>
           <view class="basic-content">
             <view>
-              <label class="user-name">{{item.nickName}}</label>
+              <label class="user-name">{{item.user.nickName}}</label>
             </view>
             <view>
               <text class='user-content content-cut'>{{item.content}}</text>
@@ -46,7 +46,7 @@
           </view>
           <!-- 时间、删除按钮、点赞评论按钮 -->
           <view class='time-action'>
-            <label>{{item.createTime}}</label>
+            <label>{{item.creationDate}}</label>
             <button bindtap='delete'>删除</button>
           </view>
         </view>

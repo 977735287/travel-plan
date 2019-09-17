@@ -16,7 +16,8 @@ Page({
     imagewidth: 0,
     imageheight: 0,
     selectImageUrl: '',
-    olddistance: 0
+    olddistance: 0,
+    isDoubleTouch: false
   },
   onLoad: function() {},
   onReady: function() {},
@@ -117,22 +118,24 @@ Page({
   onReachBottom: function() {},
   onShareAppMessage: function() {},
 
-  // bindDoubleClick(e) {
-  //   if (e.timeStamp - this.touchStartTime < 300) {
-  //     this.setData({
-  //       isExt: !this.data.isExt
-  //     })
-  //   }
-  //   this.touchStartTime = e.timeStamp;
-  // },
+  bindDoubleClick(e) {
+    // if (e.timeStamp - this.touchStartTime < 300) {
+    //   this.setData({
+    //     isExt: !this.data.isExt
+    //   })
+    // }
+    // this.touchStartTime = e.timeStamp;
+  },
 
   ViewImage(e) {
-    var url = e.currentTarget.dataset.url
-    // this.callback(url, () => {})
-    this.setData({
-      selectImageUrl: url,
-      isPreview: true
-    })
+    if (!this.data.isDoubleTouch) {
+      var url = e.currentTarget.dataset.url
+      // this.callback(url, () => {})
+      this.setData({
+        selectImageUrl: url,
+        isPreview: true
+      })
+    }
   },
 
   callback(url, callback) {
@@ -156,25 +159,24 @@ Page({
   },
 
   scroll(e) {
-    console.info(e)
     if (e.touches.length == 2) { //两个手指滑动的时候
       var xMove = e.touches[1].clientX - e.touches[0].clientX; //手指在x轴移动距离
       var yMove = e.touches[1].clientY - e.touches[0].clientY; //手指在y轴移动距离
       var distance = Math.sqrt(xMove * xMove + yMove * yMove); //根据勾股定理算出两手指之间的距离
-      console.info(distance - this.data.olddistance)
+      var isExt = false
       if (this.data.olddistance == 0) {
-        this.data.olddistance = distance; //要是第一次就给他弄上值，什么都不操作  
+        this.data.olddistance = distance; //要是第一次就给他弄上值，什么都不操 作  
       }else {
         if (distance - this.data.olddistance > 100) {
-          this.setData({
-            isExt: true
-          })
+          isExt = true
         } else if(distance - this.data.olddistance < -100) {
-          this.setData({
-            isExt: false
-          })
+          isExt = false
         }
       }
+      this.setData({
+        isExt: isExt,
+        isDoubleTouch: true
+      })
       // if (this.data.olddistance == 0) {
       //   this.data.olddistance = distance; //要是第一次就给他弄上值，什么都不操作  
       // }else {
@@ -194,6 +196,7 @@ Page({
 
   //手指离开屏幕
   endTou(e) {
-    this.data.olddistance = 0 //重置
+    this.data.olddistance = 0, //重置
+      this.data.isDoubleTouch = false
   }
 })

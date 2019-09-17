@@ -6,7 +6,9 @@
   </cu-custom>
   <view class='container margin-left margin-right'>
     <view class="cu-form-group margin-top">
-      <textarea maxlength="-1" bindinput="textareaAInput" placeholder="请输入内容..." style="height: 200rpx;"></textarea>
+      <textarea maxlength="{{wordMax}}" bindinput="contentInput" placeholder="请输入内容..." style="height: 250rpx;">
+      <text class="currentWordNumber">{{currentWordNumber|0}}/{{wordMax}}</text>
+      </textarea>
     </view>
     <view class="cu-bar bg-white">
     </view>
@@ -23,6 +25,6 @@
         </view>
       </view>
     </view>
-    <button class="cu-btn block bg-blue lg margin-top" bindtap='bindUploadPic' disabled="{{noImage}}" style="buttom: 0;">发表</button>
+    <button class="cu-btn block bg-blue lg margin-top" bindtap='bindPublish' disabled="{{!isCanPublish}}" style="buttom: 0;">发表</button>
   </view>
 </scroll-view>

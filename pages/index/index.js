@@ -1,4 +1,5 @@
 const app = getApp()
+const wxRequest = require('../../utils/wxRequest.js')
 
 Page({
   data: {
@@ -10,20 +11,23 @@ Page({
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
+          // 登录
+          wx.login({
             success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              app.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (app.userInfoReadyCallback) {
-                app.userInfoReadyCallback(res)
-              }
+              var url = '/v1/oauth/user/openid?jsCode=' + res.code
+              wxRequest.wxGet(url, {}, (res) => {
+                var url_1 = '/v1/oauth/user/openid/info?openId=' + res
+                wxRequest.wxGet(url_1, {}, (res) => {
+                  app.globalData.userInfo = res
+                }, (err) => {
+                  console.info(err)
+                })
+              }, (err) => {
+                console.info(err)
+              })
             }
           })
-        }else {
+        } else {
           wx.navigateTo({
             url: '/pages/auth/wechat/index',
           })

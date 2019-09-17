@@ -1,12 +1,16 @@
 const app = getApp()
 const util = require('../../../utils/util.js')
+const wxRequest = require('../../../utils/wxRequest.js')
 
 Page({
   data: {
     index: null,
     imgList: [],
-    noImage: true,
-    defaultMaxImage: 9
+    isCanPublish: false,
+    defaultMaxImage: 9,
+    shareInfo: {},
+    wordMax: 150,
+    content: '',
   },
   onLoad: function () { },
 
@@ -31,7 +35,7 @@ Page({
         } else {
           this.setData({
             imgList: res.tempFilePaths,
-            noImage: false
+            isCanPublish: true
           })
         }
       }
@@ -57,9 +61,9 @@ Page({
           this.setData({
             imgList: this.data.imgList
           })
-          if (this.data.imgList.length == 0) {
+          if (this.data.imgList.length == 0 && this.data.content.length == 0) {
             this.setData({
-              noImage: true
+              isCanPublish: false
             })
           }
         }
@@ -90,4 +94,45 @@ Page({
     wx.setStorageSync('pics', pics)
     wx.navigateBack({})
   },
+
+  contentInput (e) {
+    // 获取输入框的内容
+    var value = e.detail.value
+    // 获取输入框内容的长度
+    var len = parseInt(value.length)
+    var isCanPublish = this.data.isCanPublish
+    if (len == 0 && this.data.imgList.length == 0) {
+      isCanPublish = false
+    }else {
+      isCanPublish = true
+    }
+    if (len <= this.data.wordMax) {
+      this.setData({
+        currentWordNumber: len,
+        content: value,
+        isCanPublish: isCanPublish
+      })
+    } else {
+      return
+    }
+  },
+
+  bindPublish (e) {
+    var shareInfo = this.data.shareInfo
+    shareInfo['content'] = this.data.content
+    shareInfo['userId'] = app.globalData.userInfo.id
+    shareInfo['address'] = '上海市青浦区上海汉得信息技术股份有限公司'
+    shareInfo['isShowLocation'] = true
+    this.setData({
+      shareInfo: shareInfo
+    })
+    console.info(shareInfo)
+    var url = '/v1/share/info'
+    wxRequest.wxPost(url, shareInfo, (res) => {
+      console.info(res)
+      wx.navigateBack({})
+    }, (err) => {
+      console.info(err)
+    })
+  }
 })
