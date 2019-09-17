@@ -1,4 +1,5 @@
-const urlPre = 'http://127.0.0.1:8090'
+const urlPre = 'http://47.102.122.186'
+// const urlPre = 'http://127.0.0.1:8090'
 
 /**
  * 封装wx.request请求

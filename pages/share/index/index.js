@@ -13,19 +13,23 @@ Component({
     circleList: [],
     shareInfoList: [],
     userInfo: {},
-    previewImageList: []
+    previewImageList: [],
+    page: 0,
+    isMoreData: true
   },
   attached() {
+    console.info('attached')
     this.setData({
       userInfo: app.globalData.userInfo
     })
     wx.showLoading({
       title: 'loading',
     })
-    var url = '/v1/share/info'
+    var url = '/v1/share/info?page=' + this.data.page
     wxRequest.wxGet(url, {}, (res) => {
       this.setData({
-        shareInfoList: res
+        shareInfoList: res,
+        isMoreData: res.length < 10 ? false : true
       })
       wx.hideLoading()
     }, (err) => {
@@ -53,10 +57,11 @@ Component({
       wx.showLoading({
         title: 'loading',
       })
-      var url = '/v1/share/info'
+      var url = '/v1/share/info?page=' + this.data.page
       wxRequest.wxGet(url, {}, (res) => {
         this.setData({
-          shareInfoList: res
+          shareInfoList: res,
+          isMoreData: res.length < 10 ? false : true
         })
         wx.hideLoading()
       }, (err) => {
@@ -74,9 +79,26 @@ Component({
   },
   methods: {
     loadMoreData(e) {
-      // wx.showLoading({
-      //   title: 'loading',
-      // })
+      if(!this.data.isMoreData) {
+        return
+      }
+      var page = this.data.page + 1;
+      this.setData({
+        page: page
+      })
+      wx.showLoading({
+        title: 'loading',
+      })
+      var url = '/v1/share/info?page=' + page
+      wxRequest.wxGet(url, {}, (res) => {
+        this.setData({
+          shareInfoList: this.data.shareInfoList.concat(res),
+          isMoreData: res.length < 10 ? false : true
+        })
+        wx.hideLoading()
+      }, (err) => {
+        console.info(err)
+      })
       // wx.request({
       //   url: 'https://easy-mock.com/mock/5d6cd16f0f2596069bb1b409/v1/share/list',
       //   success: res => {
