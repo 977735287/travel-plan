@@ -53,6 +53,9 @@ Component({
   },
   pageLifetimes: {
     show: function () {
+      this.setData({
+        page: 0
+      })
       // 页面被展示
       wx.showLoading({
         title: 'loading',
