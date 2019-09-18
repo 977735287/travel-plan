@@ -1,3 +1,4 @@
+<wxs module="dateUtil" src="../../../utils/dateUtil.wxs"></wxs>
 <scroll-view scroll-y class="scrollPage" bindscrolltolower='loadMoreData'>
   <cu-custom bgImage="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3098043245,3200747665&fm=26&gp=0.jpg" isBack="{{false}}">
     <view class='title-content' slot="content">
@@ -45,9 +46,14 @@
             </view>
           </view>
           <!-- 时间、删除按钮、点赞评论按钮 -->
-          <view class='time-action'>
-            <label>{{item.creationDate}}</label>
-            <button bindtap='delete'>删除</button>
+          <view wx:if='{{item.user.openId == userInfo.openId}}'>
+            <view class='time-action'>
+              <label>{{dateUtil.formatTime(item.creationDate)}}</label>
+              <view style="font-size: 20rpx;">
+                <text class="margin-left" bindtap='bindEdit' data-id="{{item.id}}">编辑</text>
+                <text class="margin-left" bindtap='bindDelete' data-id="{{item.id}}" data-index="{{index}}">删除</text>
+              </view>
+            </view>
           </view>
         </view>
       </view>

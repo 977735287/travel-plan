@@ -1,6 +1,7 @@
 const app = getApp()
 const util = require('../../../utils/util.js')
 const wxRequest = require('../../../utils/wxRequest.js')
+const array = require('../../../utils/array.js')
 
 Component({
   options: {
@@ -18,7 +19,6 @@ Component({
     isMoreData: true
   },
   attached() {
-    console.info('attached')
     this.setData({
       userInfo: app.globalData.userInfo
     })
@@ -35,24 +35,15 @@ Component({
     }, (err) => {
       console.info(err)
     })
-    // wx.request({
-    //   url: 'https://easy-mock.com/mock/5d6cd16f0f2596069bb1b409/v1/share/list',
-    //   success: res => {
-    //     this.setData({
-    //       circleList: res.data
-    //     })
-    //     wx.hideLoading()
-    //   }
-    // })
   },
-  ready: function () {
-    
+  ready: function() {
+
   },
   detached() {
     wx.hideLoading()
   },
   pageLifetimes: {
-    show: function () {
+    show: function() {
       this.setData({
         page: 0
       })
@@ -71,18 +62,18 @@ Component({
         console.info(err)
       })
     },
-    hide: function () {
+    hide: function() {
       // 页面被隐藏
-      console.info('hide')
+      // console.info('hide')
     },
-    resize: function (size) {
+    resize: function(size) {
       // 页面尺寸变化
-      console.info('resize')
+      // console.info('resize')
     }
   },
   methods: {
     loadMoreData(e) {
-      if(!this.data.isMoreData) {
+      if (!this.data.isMoreData) {
         return
       }
       var page = this.data.page + 1;
@@ -102,15 +93,6 @@ Component({
       }, (err) => {
         console.info(err)
       })
-      // wx.request({
-      //   url: 'https://easy-mock.com/mock/5d6cd16f0f2596069bb1b409/v1/share/list',
-      //   success: res => {
-      //     this.setData({
-      //       circleList: this.data.circleList.concat(res.data)
-      //     })
-      //     wx.hideLoading()
-      //   }
-      // })
     },
     bindImgPreview(e) {
       let currentPicture = e.target.dataset.url
@@ -124,6 +106,38 @@ Component({
         current: currentPicture,
         urls: this.data.previewImageList
       })
-    }
+    },
+    bindDelete(e) {
+      wx.showModal({
+        title: '',
+        content: '确定要删除？',
+        cancelText: '取消',
+        confirmText: '确定',
+        success: res => {
+          if (res.confirm) {
+            var id = e.currentTarget.dataset.id
+            var index = e.currentTarget.dataset.index
+            var url = '/v1/share/info/' + id
+            wxRequest.wxDelete(url, {}, (res) => {
+              if (res == 1) {
+                var shareInfoList = this.data.shareInfoList
+                array.indexRemove(shareInfoList, index)
+                this.setData({
+                  shareInfoList: shareInfoList
+                })
+              }
+            }, (err) => {
+              console.info(err)
+            })
+          }
+        }
+      })
+    },
+    bindEdit(e) {
+      var id = e.currentTarget.dataset.id
+      wx.navigateTo({
+        url: '/pages/share/edit/index?id=' + id,
+      })
+    },
   },
 })

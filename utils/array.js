@@ -1,3 +1,10 @@
+const indexRemove = (array, index) => {
+  if (index < array.length) {
+    array.splice(index, 1);
+    return 1;
+  }
+  return -1;
+}
 
 const remove = (array, val) => {
   for (var i = 0; i < array.length; i++) {
@@ -32,6 +39,7 @@ const contains = (array, val) => {
 }
 
 module.exports = {
+  indexRemove: indexRemove,
   remove: remove,
   batchRemove: batchRemove,
   contains: contains

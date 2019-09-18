@@ -10,9 +10,19 @@ Page({
     defaultMaxImage: 9,
     shareInfo: {},
     wordMax: 150,
-    content: '',
   },
-  onLoad: function () { },
+  onLoad: function (options) {
+    var id = options.id
+    var url = '/v1/share/info/' + id
+    wxRequest.wxGet(url, {}, (res) => {
+      this.setData({
+        shareInfo: res,
+        currentWordNumber: res.content.length
+      })
+    }, (err) => {
+      console.info(err)
+    })
+  },
 
   onReady: function () { },
   onShow: function () { },
@@ -95,7 +105,7 @@ Page({
     wx.navigateBack({})
   },
 
-  contentInput (e) {
+  contentInput(e) {
     // 获取输入框的内容
     var value = e.detail.value
     // 获取输入框内容的长度
@@ -103,7 +113,7 @@ Page({
     var isCanPublish = this.data.isCanPublish
     if (len == 0 && this.data.imgList.length == 0) {
       isCanPublish = false
-    }else {
+    } else {
       isCanPublish = true
     }
     if (len <= this.data.wordMax) {
@@ -117,17 +127,14 @@ Page({
     }
   },
 
-  bindPublish (e) {
+  bindPublish(e) {
     var shareInfo = this.data.shareInfo
     shareInfo['content'] = this.data.content
-    shareInfo['userId'] = app.globalData.userInfo.id
-    shareInfo['address'] = '上海市青浦区上海汉得信息技术股份有限公司'
-    shareInfo['isShowLocation'] = true
     this.setData({
       shareInfo: shareInfo
     })
     var url = '/v1/share/info'
-    wxRequest.wxPost(url, shareInfo, (res) => {
+    wxRequest.wxPut(url, shareInfo, (res) => {
       wx.navigateBack({})
     }, (err) => {
       console.info(err)

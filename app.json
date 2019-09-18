@@ -19,7 +19,8 @@
     "pages/mine/album/index/index",
     "pages/mine/album/upload/index",
     "pages/mine/album/view/index",
-    "pages/share/add/index"
+    "pages/share/add/index",
+    "pages/share/edit/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",

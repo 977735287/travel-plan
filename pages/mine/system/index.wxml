@@ -5,7 +5,7 @@
     </view>
   </cu-custom>
   <view class='container text-xl fields'>
-    <view class='field' wx:for='{{systemInfo}}' wx:for-index='key'>
+    <view class='field' wx:for='{{systemInfo}}' wx:key wx:for-index='key'>
       <view wx:if="{{key==='safeArea'}}">
         <view class='field-name'>{{key}}.bottom:</view>
         <view class='field-value'>{{item.bottom}}</view>
