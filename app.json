@@ -26,7 +26,7 @@
     "navigationBarBackgroundColor": "#39b54a",
     "navigationBarTitleText": "travel plan A",
     "navigationStyle": "custom",
-    "navigationBarTextStyle": "white",
+    "navigationBarTextStyle": "black",
     "pageOrientation": "auto"
   },
   "usingComponents": {

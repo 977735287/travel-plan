@@ -29,7 +29,7 @@ Component({
 
     bindView(e) {
       wx.navigateTo({
-        url: '/pages/album/index/index',
+        url: '/pages/home/view/index',
       })
     },
 
