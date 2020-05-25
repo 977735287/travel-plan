@@ -2,6 +2,7 @@
   "usingComponents": {
     "home": "/pages/home/index/index",
     "share": "/pages/share/index/index",
+    "collect": "/pages/collect/index/index",
     "mine": "/pages/mine/index/index"
   }
 }

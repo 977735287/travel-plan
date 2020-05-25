@@ -14,9 +14,9 @@ Page({
           // 登录
           wx.login({
             success: res => {
-              var url = '/v1/oauth/user/openid?jsCode=' + res.code
+              var url = '/wechat/user/openid?jsCode=' + res.code
               wxRequest.wxGet(url, {}, (res) => {
-                var url_1 = '/v1/oauth/user/openid/info?openId=' + res
+                var url_1 = '/wechat/user/openid/info?openId=' + res
                 wxRequest.wxGet(url_1, {}, (res) => {
                   app.globalData.userInfo = res
                 }, (err) => {

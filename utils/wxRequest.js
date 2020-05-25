@@ -1,5 +1,5 @@
 const urlPre = 'http://47.102.122.186'
-// const urlPre = 'http://127.0.0.1:8090'
+// const urlPre = 'http://127.0.0.1:18080'
 
 /**
  * 封装wx.request请求
@@ -7,7 +7,7 @@ const urlPre = 'http://47.102.122.186'
  * url: 请求地址
  * data： 要传递的参数
  * callback： 请求成功回调函数
- * errFun： 请求失败回调函数
+ * errFun： 请求失败回调函a数
  **/
 const wxRequest = (method, url, data, callback, errFun) => {
   wx.request({

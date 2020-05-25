@@ -1,0 +1,7 @@
+
+.question-name-title {
+	font-size: 30rpx;
+	font-weight: 900;
+	color: var(--black);
+	padding: 0 30rpx;
+}

@@ -1,0 +1,46 @@
+<scroll-view scroll-y class="scrollPage">
+	<cu-custom bgImage="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3098043245,3200747665&fm=26&gp=0.jpg" isBack="{{true}}">
+		<view class='title-content' slot="content">
+		</view>
+	</cu-custom>
+	<view class='container'>
+		<view class="cu-card article no-card">
+			<view class="cu-item shadow margin-top" wx:for="{{questionList}}" wx:key wx:for-index="index">
+				<view class="question-name-title margin-top">
+					{{index + 1}}. {{item.question}}
+				</view>
+				<view class="content margin-top">
+					<view class="desc">
+						<text>{{item.answer}}
+						</text>
+						<view class="margin-top">
+							<view class="cu-tag bg-{{label.color}} light sm round" wx:for='{{item.labels}}' wx:for-item='label' wx:key>{{label.name}}</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- <view class="cu-card article no-card">
+			<view class="cu-item shadow margin-top">
+				<view class="question-name-title margin-top">
+					1. Redis的并发竞争问题如何解决?
+				</view>
+				<view class="content margin-top">
+					<view class="desc">
+						<text>单进程单线程模式，采用队列模式将并发访问变为串行访问。Redis本身没有锁的概念，Redis对于多个客户端连接并不存在竞争，利用setnx实现锁。
+						</text>
+						<view class="margin-top margin-bottom">
+							<view class="cu-tag bg-red light sm round">redis</view>
+							<view class="cu-tag bg-green light sm round">并发</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view> -->
+		<view class="cu-card article no-card">
+			<view class="cu-item shadow margin-top">
+				<view class="question-name-title margin-top" style="margin-top: 10%;"> </view>
+			</view>
+		</view>
+	</view>
+</scroll-view>

@@ -1,5 +1,6 @@
 <home wx:if="{{PageCur=='home'}}"></home>
 <share wx:if="{{PageCur=='share'}}"></share>
+<collect wx:if="{{PageCur=='collect'}}"></collect>
 <mine wx:if="{{PageCur=='mine'}}"></mine>
 <view class="cu-bar tabbar bg-white shadow foot">
   <view class="action" bindtap="NavChange" data-cur="home">
@@ -15,6 +16,13 @@
     </view> -->
     <view class="cuIcon-cameraadd{{PageCur=='share'?'fill text-green':''}}"></view>
     <view class="{{PageCur=='share'?'text-green':'text-gray'}}">发现</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="collect">
+    <!-- <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/collect{{PageCur=='collect'?'_cur':''}}.png"></image>
+    </view> -->
+    <view class="cuIcon-question{{PageCur=='collect'?'fill text-green':''}}"></view>
+    <view class="{{PageCur=='collect'?'text-green':'text-gray'}}">收藏</view>
   </view>
   <view class="action" bindtap="NavChange" data-cur="mine">
     <!-- <view class='cuIcon-cu-image'>
